@@ -2,9 +2,11 @@
 #include "device_registers.h"
 #include "latency.h"
 #include "UART_IO.h"
-#include "stdio.h"
-#include "string.h"
-#include "stdbool.h"
+#include <stdio.h>
+#include <string.h>
+#include "stdarg.h"
+#include <stdint.h>
+#include <stdbool.h>
 
 
 extern UART_type *uart1;
@@ -88,6 +90,18 @@ void uartSendStr(UART_type *uartx, char* str){
     uartSendChar(uartx, '\r');
     uartSendChar(uartx, '\n');
 }
+char IOUART_TX_BUF[200];
+/* 串口打印输出函数 */
+void IOUART_printf(char *fmt, ...) {
+	uint32_t bytesRemaining;
+	va_list ap;
+	va_start(ap, fmt);
+	vsprintf((char *)IOUART_TX_BUF, fmt, ap);
+	va_end(ap);
+	uartSendStr(uart1, IOUART_TX_BUF);
+}
+
+
 char str_buf[100];
 char char_buf=0;
 // 接收字符函数
