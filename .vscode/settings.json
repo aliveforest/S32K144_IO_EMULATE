@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "lpi2c.h": "c",
+        "cpu.h": "c",
+        "oled_io.h": "c",
+        "lptmr.h": "c",
+        "rgb_led.h": "c",
+        "lp_i2c_oled.h": "c",
+        "hardwarelib.h": "c",
+        "s32k144.h": "c",
+        "lpspi_oled.h": "c",
+        "latency.h": "c",
+        "oled_font.h": "c",
+        "spi_oled.h": "c",
+        "lpuart.h": "c"
+    }
+}
