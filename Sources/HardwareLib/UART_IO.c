@@ -121,7 +121,6 @@ void uartReceiveChar(UART_type *uartx) {
         uartSendStr(uart1, str_buf);
         later_ms(10);
     }
-
 }
 
 // // 接收字符串函数
@@ -157,12 +156,11 @@ void S32_NVIC_EnableIRQ(IRQn_Type IRQn, int Priority){
 
 void PORTA_IRQHandler(void){
     uart1->PORTx->PCR[uart1->rx_pin] |= PORT_PCR_IRQC(0);  //禁用中断状态标志
-//    uartReceiveStr(uart1); // 接收字符串
-//    uartSendChar(uart1, char_buf); // 接收到再发送出去
     uartReceiveChar(uart1); // 接收字符
     uart1->PORTx->PCR[uart1->rx_pin] |= PORT_PCR_ISF_MASK; //清除外部中断
     uart1->PORTx->PCR[uart1->rx_pin] |= PORT_PCR_IRQC(0xa); // 再开启下降沿中断
 }
+
 void PORTB_IRQHandler(void)
 {
 }

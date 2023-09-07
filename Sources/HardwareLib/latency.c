@@ -12,7 +12,7 @@ void systick_delay_init(void) {
 	S32_SysTick->CSR = 0u; //控制寄存器 /**< SysTick 控制和状态寄存器，偏移量：0x0 */
 	S32_SysTick->CSR |= S32_SysTick_CSR_ENABLE(1)|S32_SysTick_CSR_CLKSOURCE(1u); // 开启时钟，选择时钟源为 1->内核时钟;(0->内核时钟/16)
 }
-
+/* 计数单位为100ns，可实现0.1us精度 */
 void later_100_ns(volatile uint32_t n_100ns)
 {
 	uint32_t told  = S32_SysTick->CVR ;      	//刚进入时的计数器值
