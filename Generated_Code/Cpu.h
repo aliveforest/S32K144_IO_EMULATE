@@ -7,7 +7,7 @@
 **     Version     : Component 01.197, Driver 01.00, CPU db: 3.00.000
 **     Datasheet   : S32K14XRM Rev. 2, 02/2017
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2023-09-06, 10:51, # CodeGen: 35
+**     Date/Time   : 2023-09-11, 11:46, # CodeGen: 36
 **     Abstract    :
 **
 **     Settings    :
@@ -59,6 +59,7 @@
 
 #include "interrupt_manager.h"
 #include "clock.h"
+#include "osif.h"
 #include "edma_driver.h"
 #include "system_S32K144.h"
 

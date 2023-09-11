@@ -66,7 +66,7 @@ int main(void)
 	systick_delay_init(); // systick latency延时
 
 	// RGB_LED_KEY_init();
-	// IO_UART_init(uart1, 'A', 9u, 8u, 115200);   // IO_UART初始�????????????? TX  RX
+	// IO_UART_init(uart1, 'A', 9u, 8u, 115200);   // IO_UART初始�?????????????? TX  RX
 	// OLED_Init(IIC1, 'C', 17u, 16u, 2u);		 // SDA  SCL  delay_time us
 	// OLED_Clear(IIC1);
 	SPI_OLED_Init();

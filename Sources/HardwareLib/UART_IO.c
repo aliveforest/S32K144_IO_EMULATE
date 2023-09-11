@@ -120,7 +120,7 @@ void uartReceiveChar(UART_type *uartx) {
         if (uart_Read_RX(uartx))
         	data |= (1 << i);     // 接收引脚为高电平，接收到1
         else
-        	data &= ~(1 << i);   // 接收引脚为低电平，接收到0
+        	data &= ~(1 << i);    // 接收引脚为低电平，接收到0
     }
     later_100_ns(interval_t_100ns); // 信号间隔时间 *100ns
     // 等待停止位（逻辑高电平）
