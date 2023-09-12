@@ -4,6 +4,7 @@
  *  Created on: 2023年8月8日
  *      Author: dengtongbei
  */
+
 #include "LPTMR.h"
 #include "LPUART.h"
 #include "UART_IO.h"
@@ -41,14 +42,18 @@ void LPTMR_init(void)
 //    LPTMR0->CSR |= LPTMR_CSR_TEN_MASK;                  /* Enable Timer 			*/
 
 
-     Enable_Interrupt(LPTMR0_IRQn); 						/* 中断使能 */
+     Enable_Interrupt(LPTMR0_IRQn, 0x06); 						/* 中断使能 */
 }
 
-void Enable_Interrupt(uint8_t vector_number)
-{
-    S32_NVIC->ISER[(uint32_t)(vector_number) >> 5U] = (uint32_t)(1U << ((uint32_t)(vector_number) & (uint32_t)0x1FU));
-    S32_NVIC->ICPR[(uint32_t)(vector_number) >> 5U] = (uint32_t)(1U << ((uint32_t)(vector_number) & (uint32_t)0x1FU));
-    S32_NVIC->IP[vector_number] = 0xA;
+/* 中断配置 */
+void Enable_Interrupt (uint32_t vector_number, uint32_t priority) {
+	uint8_t shift = (uint8_t) (8U - FEATURE_NVIC_PRIO_BITS);
+	/* 清除任何挂起的 IRQ */
+	S32_NVIC->ISER[(uint32_t)(vector_number) >> 5U] = (uint32_t)(1U << ((uint32_t)(vector_number) & (uint32_t)0x1FU));
+	/* 使能 IRQ */
+	S32_NVIC->ICPR[(uint32_t)(vector_number) >> 5U] = (uint32_t)(1U << ((uint32_t)(vector_number) & (uint32_t)0x1FU));
+	/* 优先级设置 */
+	S32_NVIC->IP[(uint32_t)vector_number] = (uint8_t)(((((uint32_t)priority) << shift)) & 0xFFUL);
 }
 
 void TMR_delay_us(volatile uint32_t nus) {

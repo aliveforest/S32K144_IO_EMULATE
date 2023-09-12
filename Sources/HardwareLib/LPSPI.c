@@ -74,5 +74,5 @@ void LPSPI1_transmit_8bits(uint8_t send)
 	while ((LPSPI1->SR & LPSPI_SR_TDF_MASK) >> LPSPI_SR_TDF_SHIFT == 0) ;
 	LPSPI1->TDR = send;				 /* 传输数据 */
 	LPSPI1->SR |= LPSPI_SR_TDF_MASK; /* Clear TDF flag (清除数据传输标志)	*/
-	while ((LPSPI1->SR & LPSPI_SR_TDF_MASK) >> LPSPI_SR_TDF_SHIFT == 0) ;
+	while ((LPSPI1->SR & LPSPI_SR_TDF_MASK) >> LPSPI_SR_TDF_SHIFT == 0) ; /* 等待 Tx FIFO 可用 	*/
 }

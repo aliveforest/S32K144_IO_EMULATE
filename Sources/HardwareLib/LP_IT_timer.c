@@ -1,4 +1,5 @@
 #include "S32K144.h"
+#include "device_registers.h"
 #include "LP_IT_timer.h"
 #include "LPUART.h"
 #include "UART_IO.h"
@@ -26,13 +27,17 @@ void LPIT0_init(void) {
                                         /* TROT=0 定时器不会在触发时重新加载 */
                                         /* TRG_SRC=0: 外部触发源 */
                                         /* TRG_SEL=0: 定时/计数器第 0 个触发源被选中*/
-    LPIT_NVIC_init_IRQs(); 		/* 启用所需的中断和优先级 */                                   
+    LPIT_NVIC_init_IRQs(0x04); 		/* 启用所需的中断和优先级 */                                   
 }
-
-void LPIT_NVIC_init_IRQs (void) {
-	S32_NVIC->ICPR[1] = 1 << (LPIT0_Ch0_IRQn % 32);  /* IRQ48-LPIT0 ch0: clr any pending IRQ*/
-	S32_NVIC->ISER[1] = 1 << (LPIT0_Ch0_IRQn % 32);  /* IRQ48-LPIT0 ch0: enable IRQ */
-	S32_NVIC->IP[LPIT0_Ch0_IRQn] = 0xA;              /* IRQ48-LPIT0 ch0: priority 10 of 0-15*/
+/* 中断配置 */
+void LPIT_NVIC_init_IRQs (uint32_t priority) {
+	uint8_t shift = (uint8_t) (8U - FEATURE_NVIC_PRIO_BITS);
+	/* 清除任何挂起的 IRQ */
+	S32_NVIC->ISER[(uint32_t)(LPIT0_Ch0_IRQn) >> 5U] = (uint32_t)(1U << ((uint32_t)(LPIT0_Ch0_IRQn) & (uint32_t)0x1FU));
+	/* 使能 IRQ */
+	S32_NVIC->ICPR[(uint32_t)(LPIT0_Ch0_IRQn) >> 5U] = (uint32_t)(1U << ((uint32_t)(LPIT0_Ch0_IRQn) & (uint32_t)0x1FU));
+	/* 优先级设置 */
+	S32_NVIC->IP[(uint32_t)LPIT0_Ch0_IRQn] = (uint8_t)(((((uint32_t)priority) << shift)) & 0xFFUL);
 }
 
 
