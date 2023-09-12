@@ -21,7 +21,7 @@ void IOUART_printf(char *fmt, ...)
 void uartSendStr(UART_type *uartx, char* str);
 void uartReceiveChar(UART_type *uartx);
 void uartReceiveStr(UART_type *uartx);
-void S32_NVIC_EnableIRQ(IRQn_Type IRQn, int Priority);
+void S32_NVIC_EnableIRQ (uint32_t vector_number, uint32_t priority) ;
 
 
 

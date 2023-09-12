@@ -161,11 +161,16 @@ void uartReceiveChar(UART_type *uartx) {
 // }
 
 // 使能中断
-void S32_NVIC_EnableIRQ(IRQn_Type IRQn, int Priority){
 
-	S32_NVIC->ICPR[1] = 1 << (IRQn % 32);  /* clr any pending IRQ*/
-    S32_NVIC->ISER[1] = 1 << (IRQn % 32);   /* enable interrupt */
-    S32_NVIC->IP[IRQn] = Priority;
+/* 中断配置 */
+void S32_NVIC_EnableIRQ (uint32_t vector_number, uint32_t priority) {
+	uint8_t shift = (uint8_t) (8U - FEATURE_NVIC_PRIO_BITS);
+	/* 清除任何挂起的 IRQ */
+	S32_NVIC->ISER[(uint32_t)(vector_number) >> 5U] = (uint32_t)(1U << ((uint32_t)(vector_number) & (uint32_t)0x1FU));
+	/* 使能 IRQ */
+	S32_NVIC->ICPR[(uint32_t)(vector_number) >> 5U] = (uint32_t)(1U << ((uint32_t)(vector_number) & (uint32_t)0x1FU));
+	/* 优先级设置 */
+	S32_NVIC->IP[(uint32_t)vector_number] = (uint8_t)(((((uint32_t)priority) << shift)) & 0xFFUL);
 }
 
 void PORTA_IRQHandler(void){
