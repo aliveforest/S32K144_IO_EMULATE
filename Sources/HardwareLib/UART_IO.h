@@ -17,7 +17,7 @@ void IO_UART_init(UART_type *uartx, uint8_t _x, uint32_t tx_pin, uint32_t rx_pin
 // void uart_TX_Clr(UART_type *uartx);
 // bool uart_Read_RX(UART_type *uartx);
 void uartSendChar(UART_type *uartx, char data);
-void IOUART_printf(char *fmt, ...) 
+void IOUART_printf(char *fmt, ...);
 void uartSendStr(UART_type *uartx, char* str);
 void uartReceiveChar(UART_type *uartx);
 void uartReceiveStr(UART_type *uartx);

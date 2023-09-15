@@ -12,6 +12,7 @@
         "latency.h": "c",
         "oled_font.h": "c",
         "spi_oled.h": "c",
-        "lpuart.h": "c"
+        "lpuart.h": "c",
+        "uart_io.h": "c"
     }
 }
