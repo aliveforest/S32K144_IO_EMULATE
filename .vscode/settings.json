@@ -14,6 +14,7 @@
         "spi_oled.h": "c",
         "lpuart.h": "c",
         "uart_io.h": "c",
-        "stdbool.h": "c"
+        "stdbool.h": "c",
+        "device_registers.h": "c"
     }
 }
