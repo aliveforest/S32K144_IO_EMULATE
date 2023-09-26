@@ -59,7 +59,6 @@
 
 #include "interrupt_manager.h"
 #include "clock.h"
-#include "osif.h"
 #include "edma_driver.h"
 #include "system_S32K144.h"
 

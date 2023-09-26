@@ -36,8 +36,11 @@
 #include "string.h"
 #include "HardwareLib.h"
 
-UART_type *uart1;       // 定义IO_UART类型
-IIC_type *IIC1;			//定义IO_IIC类型
+UART_type uart_1;       // 定义IO_UART类型
+UART_type *uart1 = &uart_1;       // 定义IO_UART指针
+
+IIC_type IIC_1;			//定义IO_IIC类型
+IIC_type *IIC1 = &IIC_1;		  //定义IO_IIC指针
 
 void WDOG_disable (void) {
 	WDOG->CNT=0xD928C520;     /* Unlock watchdog 		*/
@@ -66,7 +69,7 @@ int main(void)
 	systick_delay_init(); // systick latency延时
 
 	// RGB_LED_KEY_init();
-	// IO_UART_init(uart1, 'A', 9u, 8u, 115200);   // IO_UART初始�?????????????? TX  RX
+	// IO_UART_init(uart1, 'A', 9u, 8u, 115200);   // IO_UART初始�?????????????? TX  RX
 	// OLED_Init(IIC1, 'C', 17u, 16u, 2u);		 // SDA  SCL  delay_time us
 	// OLED_Clear(IIC1);
 	SPI_OLED_Init();

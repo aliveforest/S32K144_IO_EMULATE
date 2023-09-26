@@ -887,7 +887,7 @@ Discarded input sections
  .text.LPTMR_init
                 0x00000000       0x70 ./Sources/HardwareLib/LPTMR.o
  .text.Enable_Interrupt
-                0x00000000       0x5c ./Sources/HardwareLib/LPTMR.o
+                0x00000000       0x64 ./Sources/HardwareLib/LPTMR.o
  .text.TMR_delay_us
                 0x00000000       0x44 ./Sources/HardwareLib/LPTMR.o
  .text          0x00000000        0x0 ./Sources/HardwareLib/LPUART.o
@@ -951,9 +951,9 @@ Discarded input sections
  .bss.lpit0_ch0_flag_counter
                 0x00000000        0x4 ./Sources/HardwareLib/LP_IT_timer.o
  .text.LPIT0_init
-                0x00000000       0x50 ./Sources/HardwareLib/LP_IT_timer.o
+                0x00000000       0x54 ./Sources/HardwareLib/LP_IT_timer.o
  .text.LPIT_NVIC_init_IRQs
-                0x00000000       0x2c ./Sources/HardwareLib/LP_IT_timer.o
+                0x00000000       0x40 ./Sources/HardwareLib/LP_IT_timer.o
  .text          0x00000000        0x0 ./Sources/HardwareLib/OLED_FONT.o
  .data          0x00000000        0x0 ./Sources/HardwareLib/OLED_FONT.o
  .bss           0x00000000        0x0 ./Sources/HardwareLib/OLED_FONT.o
@@ -1056,10 +1056,14 @@ Discarded input sections
  .data.error_100ns
                 0x00000000        0x4 ./Sources/HardwareLib/UART_IO.o
  .text.IO_UART_init
-                0x00000000      0x1dc ./Sources/HardwareLib/UART_IO.o
+                0x00000000      0x1d8 ./Sources/HardwareLib/UART_IO.o
+ .bss.IOUART_TX_BUF
+                0x00000000       0xc8 ./Sources/HardwareLib/UART_IO.o
+ .text.IOUART_printf
+                0x00000000       0x3c ./Sources/HardwareLib/UART_IO.o
  .bss.char_buf  0x00000000        0x1 ./Sources/HardwareLib/UART_IO.o
  .text.S32_NVIC_EnableIRQ
-                0x00000000       0x6c ./Sources/HardwareLib/UART_IO.o
+                0x00000000       0x64 ./Sources/HardwareLib/UART_IO.o
  .text          0x00000000        0x0 ./Sources/HardwareLib/clocks_and_modes.o
  .data          0x00000000        0x0 ./Sources/HardwareLib/clocks_and_modes.o
  .bss           0x00000000        0x0 ./Sources/HardwareLib/clocks_and_modes.o
@@ -2559,7 +2563,7 @@ LOAD e:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../
                 0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region m_data_2 overflowed with stack and heap)
 OUTPUT(IO_Emulate_S32K144_SDK.elf elf32-littlearm)
 
-.debug_info     0x00000000    0x1167a
+.debug_info     0x00000000    0x11788
  .debug_info    0x00000000     0x19dd ./Generated_Code/clockMan1.o
  .debug_info    0x000019dd       0x26 ./Project_Settings/Startup_Code/startup_S32K144.o
  .debug_info    0x00001a03      0x51e ./SDK/platform/devices/S32K144/startup/system_S32K144.o
@@ -2573,16 +2577,16 @@ OUTPUT(IO_Emulate_S32K144_SDK.elf elf32-littlearm)
  .debug_info    0x0000ad40      0x363 ./Sources/HardwareLib/GPIO_init.o
  .debug_info    0x0000b0a3      0x343 ./Sources/HardwareLib/LPSPI.o
  .debug_info    0x0000b3e6      0x631 ./Sources/HardwareLib/LPSPI_oled.o
- .debug_info    0x0000ba17      0x715 ./Sources/HardwareLib/LPTMR.o
- .debug_info    0x0000c12c      0xf66 ./Sources/HardwareLib/LPUART.o
- .debug_info    0x0000d092      0x772 ./Sources/HardwareLib/LP_IT_timer.o
- .debug_info    0x0000d804      0x12e ./Sources/HardwareLib/OLED_FONT.o
- .debug_info    0x0000d932      0x7a4 ./Sources/HardwareLib/SPI_OLED.o
- .debug_info    0x0000e0d6     0x110c ./Sources/HardwareLib/UART_IO.o
- .debug_info    0x0000f1e2      0x21e ./Sources/HardwareLib/latency.o
- .debug_info    0x0000f400     0x227a ./Sources/main.o
+ .debug_info    0x0000ba17      0x753 ./Sources/HardwareLib/LPTMR.o
+ .debug_info    0x0000c16a      0xf66 ./Sources/HardwareLib/LPUART.o
+ .debug_info    0x0000d0d0      0x7b5 ./Sources/HardwareLib/LP_IT_timer.o
+ .debug_info    0x0000d885      0x12e ./Sources/HardwareLib/OLED_FONT.o
+ .debug_info    0x0000d9b3      0x7a4 ./Sources/HardwareLib/SPI_OLED.o
+ .debug_info    0x0000e157     0x1199 ./Sources/HardwareLib/UART_IO.o
+ .debug_info    0x0000f2f0      0x21e ./Sources/HardwareLib/latency.o
+ .debug_info    0x0000f50e     0x227a ./Sources/main.o
 
-.debug_abbrev   0x00000000     0x20ca
+.debug_abbrev   0x00000000     0x2109
  .debug_abbrev  0x00000000      0x143 ./Generated_Code/clockMan1.o
  .debug_abbrev  0x00000143       0x14 ./Project_Settings/Startup_Code/startup_S32K144.o
  .debug_abbrev  0x00000157      0x122 ./SDK/platform/devices/S32K144/startup/system_S32K144.o
@@ -2598,14 +2602,14 @@ OUTPUT(IO_Emulate_S32K144_SDK.elf elf32-littlearm)
  .debug_abbrev  0x000011ef      0x182 ./Sources/HardwareLib/LPSPI_oled.o
  .debug_abbrev  0x00001371      0x188 ./Sources/HardwareLib/LPTMR.o
  .debug_abbrev  0x000014f9      0x290 ./Sources/HardwareLib/LPUART.o
- .debug_abbrev  0x00001789      0x16a ./Sources/HardwareLib/LP_IT_timer.o
- .debug_abbrev  0x000018f3       0x6f ./Sources/HardwareLib/OLED_FONT.o
- .debug_abbrev  0x00001962      0x188 ./Sources/HardwareLib/SPI_OLED.o
- .debug_abbrev  0x00001aea      0x2b8 ./Sources/HardwareLib/UART_IO.o
- .debug_abbrev  0x00001da2      0x123 ./Sources/HardwareLib/latency.o
- .debug_abbrev  0x00001ec5      0x205 ./Sources/main.o
+ .debug_abbrev  0x00001789      0x18a ./Sources/HardwareLib/LP_IT_timer.o
+ .debug_abbrev  0x00001913       0x6f ./Sources/HardwareLib/OLED_FONT.o
+ .debug_abbrev  0x00001982      0x188 ./Sources/HardwareLib/SPI_OLED.o
+ .debug_abbrev  0x00001b0a      0x2d7 ./Sources/HardwareLib/UART_IO.o
+ .debug_abbrev  0x00001de1      0x123 ./Sources/HardwareLib/latency.o
+ .debug_abbrev  0x00001f04      0x205 ./Sources/main.o
 
-.debug_aranges  0x00000000      0xcc8
+.debug_aranges  0x00000000      0xcd0
  .debug_aranges
                 0x00000000       0x18 ./Generated_Code/clockMan1.o
  .debug_aranges
@@ -2643,13 +2647,13 @@ OUTPUT(IO_Emulate_S32K144_SDK.elf elf32-littlearm)
  .debug_aranges
                 0x00000b10       0xd0 ./Sources/HardwareLib/SPI_OLED.o
  .debug_aranges
-                0x00000be0       0x80 ./Sources/HardwareLib/UART_IO.o
+                0x00000be0       0x88 ./Sources/HardwareLib/UART_IO.o
  .debug_aranges
-                0x00000c60       0x40 ./Sources/HardwareLib/latency.o
+                0x00000c68       0x40 ./Sources/HardwareLib/latency.o
  .debug_aranges
-                0x00000ca0       0x28 ./Sources/main.o
+                0x00000ca8       0x28 ./Sources/main.o
 
-.debug_line     0x00000000     0x5756
+.debug_line     0x00000000     0x57a1
  .debug_line    0x00000000      0x397 ./Generated_Code/clockMan1.o
  .debug_line    0x00000397       0x82 ./Project_Settings/Startup_Code/startup_S32K144.o
  .debug_line    0x00000419      0x21b ./SDK/platform/devices/S32K144/startup/system_S32K144.o
@@ -2663,16 +2667,16 @@ OUTPUT(IO_Emulate_S32K144_SDK.elf elf32-littlearm)
  .debug_line    0x00003883      0x1f6 ./Sources/HardwareLib/GPIO_init.o
  .debug_line    0x00003a79      0x1d8 ./Sources/HardwareLib/LPSPI.o
  .debug_line    0x00003c51      0x41d ./Sources/HardwareLib/LPSPI_oled.o
- .debug_line    0x0000406e      0x1f7 ./Sources/HardwareLib/LPTMR.o
- .debug_line    0x00004265      0x2f9 ./Sources/HardwareLib/LPUART.o
- .debug_line    0x0000455e      0x1de ./Sources/HardwareLib/LP_IT_timer.o
- .debug_line    0x0000473c       0x52 ./Sources/HardwareLib/OLED_FONT.o
- .debug_line    0x0000478e      0x4a7 ./Sources/HardwareLib/SPI_OLED.o
- .debug_line    0x00004c35      0x38a ./Sources/HardwareLib/UART_IO.o
- .debug_line    0x00004fbf      0x278 ./Sources/HardwareLib/latency.o
- .debug_line    0x00005237      0x51f ./Sources/main.o
+ .debug_line    0x0000406e      0x204 ./Sources/HardwareLib/LPTMR.o
+ .debug_line    0x00004272      0x2f9 ./Sources/HardwareLib/LPUART.o
+ .debug_line    0x0000456b      0x1ed ./Sources/HardwareLib/LP_IT_timer.o
+ .debug_line    0x00004758       0x52 ./Sources/HardwareLib/OLED_FONT.o
+ .debug_line    0x000047aa      0x4a7 ./Sources/HardwareLib/SPI_OLED.o
+ .debug_line    0x00004c51      0x3b9 ./Sources/HardwareLib/UART_IO.o
+ .debug_line    0x0000500a      0x278 ./Sources/HardwareLib/latency.o
+ .debug_line    0x00005282      0x51f ./Sources/main.o
 
-.debug_str      0x00000000     0x7078
+.debug_str      0x00000000     0x7094
  .debug_str     0x00000000     0x2e21 ./Generated_Code/clockMan1.o
                                0x2ed0 (size before relaxing)
  .debug_str     0x00002e21       0x3f ./Project_Settings/Startup_Code/startup_S32K144.o
@@ -2699,21 +2703,21 @@ OUTPUT(IO_Emulate_S32K144_SDK.elf elf32-littlearm)
                                 0x31a (size before relaxing)
  .debug_str     0x000064cb      0x17d ./Sources/HardwareLib/LPSPI_oled.o
                                 0x40c (size before relaxing)
- .debug_str     0x00006648       0xa6 ./Sources/HardwareLib/LPTMR.o
-                                0x994 (size before relaxing)
- .debug_str     0x000066ee      0x512 ./Sources/HardwareLib/LPUART.o
+ .debug_str     0x00006648       0xb2 ./Sources/HardwareLib/LPTMR.o
+                                0x9b4 (size before relaxing)
+ .debug_str     0x000066fa      0x506 ./Sources/HardwareLib/LPUART.o
                                 0xe1d (size before relaxing)
  .debug_str     0x00006c00       0x9d ./Sources/HardwareLib/LP_IT_timer.o
-                                0x9c0 (size before relaxing)
+                                0x9e0 (size before relaxing)
  .debug_str     0x00006c9d       0x23 ./Sources/HardwareLib/OLED_FONT.o
                                 0x252 (size before relaxing)
  .debug_str     0x00006cc0      0x1b4 ./Sources/HardwareLib/SPI_OLED.o
                                 0x4ea (size before relaxing)
- .debug_str     0x00006e74      0x137 ./Sources/HardwareLib/UART_IO.o
-                                0xe92 (size before relaxing)
- .debug_str     0x00006fab       0x72 ./Sources/HardwareLib/latency.o
+ .debug_str     0x00006e74      0x153 ./Sources/HardwareLib/UART_IO.o
+                                0xee8 (size before relaxing)
+ .debug_str     0x00006fc7       0x72 ./Sources/HardwareLib/latency.o
                                 0x2bc (size before relaxing)
- .debug_str     0x0000701d       0x5b ./Sources/main.o
+ .debug_str     0x00007039       0x5b ./Sources/main.o
                                0x2f05 (size before relaxing)
 
 .comment        0x00000000       0xa0
@@ -2739,7 +2743,7 @@ OUTPUT(IO_Emulate_S32K144_SDK.elf elf32-littlearm)
  .comment       0x000000a0       0xa1 ./Sources/HardwareLib/latency.o
  .comment       0x000000a0       0xa1 ./Sources/main.o
 
-.debug_ranges   0x00000000      0xb58
+.debug_ranges   0x00000000      0xb60
  .debug_ranges  0x00000000       0x20 ./SDK/platform/devices/S32K144/startup/system_S32K144.o
  .debug_ranges  0x00000020       0x10 ./SDK/platform/devices/startup.o
  .debug_ranges  0x00000030      0x460 ./SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.o
@@ -2755,11 +2759,11 @@ OUTPUT(IO_Emulate_S32K144_SDK.elf elf32-littlearm)
  .debug_ranges  0x00000988       0x38 ./Sources/HardwareLib/LPUART.o
  .debug_ranges  0x000009c0       0x20 ./Sources/HardwareLib/LP_IT_timer.o
  .debug_ranges  0x000009e0       0xc0 ./Sources/HardwareLib/SPI_OLED.o
- .debug_ranges  0x00000aa0       0x70 ./Sources/HardwareLib/UART_IO.o
- .debug_ranges  0x00000b10       0x30 ./Sources/HardwareLib/latency.o
- .debug_ranges  0x00000b40       0x18 ./Sources/main.o
+ .debug_ranges  0x00000aa0       0x78 ./Sources/HardwareLib/UART_IO.o
+ .debug_ranges  0x00000b18       0x30 ./Sources/HardwareLib/latency.o
+ .debug_ranges  0x00000b48       0x18 ./Sources/main.o
 
-.debug_frame    0x00000000     0x4110
+.debug_frame    0x00000000     0x4154
  .debug_frame   0x00000000       0x80 ./SDK/platform/devices/S32K144/startup/system_S32K144.o
  .debug_frame   0x00000080       0x38 ./SDK/platform/devices/startup.o
  .debug_frame   0x000000b8     0x1524 ./SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.o
@@ -2773,46 +2777,46 @@ OUTPUT(IO_Emulate_S32K144_SDK.elf elf32-littlearm)
  .debug_frame   0x000028c4      0x268 ./Sources/HardwareLib/LPSPI_oled.o
  .debug_frame   0x00002b2c       0x98 ./Sources/HardwareLib/LPTMR.o
  .debug_frame   0x00002bc4       0xf0 ./Sources/HardwareLib/LPUART.o
- .debug_frame   0x00002cb4       0x68 ./Sources/HardwareLib/LP_IT_timer.o
- .debug_frame   0x00002d1c      0x328 ./Sources/HardwareLib/SPI_OLED.o
- .debug_frame   0x00003044      0x1dc ./Sources/HardwareLib/UART_IO.o
- .debug_frame   0x00003220       0xcc ./Sources/HardwareLib/latency.o
- .debug_frame   0x000032ec       0x50 ./Sources/main.o
- .debug_frame   0x0000333c       0x20 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memset.o)
- .debug_frame   0x0000335c       0x8c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-vfprintf_float.o)
- .debug_frame   0x000033e8       0x60 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-vfprintf_i.o)
- .debug_frame   0x00003448       0x40 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-vfscanf_float.o)
- .debug_frame   0x00003488       0x20 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-sf_nan.o)
- .debug_frame   0x000034a8       0x70 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-sprintf.o)
- .debug_frame   0x00003518      0x12c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-strtod.o)
- .debug_frame   0x00003644       0x88 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-strtol.o)
- .debug_frame   0x000036cc       0x40 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-vsprintf.o)
- .debug_frame   0x0000370c       0x6c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-dtoa.o)
- .debug_frame   0x00003778       0x70 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-gdtoa-gethex.o)
- .debug_frame   0x000037e8       0x74 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-gdtoa-hexnan.o)
- .debug_frame   0x0000385c       0x40 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-localeconv.o)
- .debug_frame   0x0000389c       0x68 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-locale.o)
- .debug_frame   0x00003904       0x30 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-malloc.o)
- .debug_frame   0x00003934       0x48 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-mbtowc_r.o)
- .debug_frame   0x0000397c       0x28 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x000039a4      0x240 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-mprec.o)
- .debug_frame   0x00003be4       0x2c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-callocr.o)
- .debug_frame   0x00003c10       0x38 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-freer.o)
- .debug_frame   0x00003c48       0x2c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-mallocr.o)
- .debug_frame   0x00003c74       0x90 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-svfprintf.o)
- .debug_frame   0x00003d04       0x2c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-sbrkr.o)
- .debug_frame   0x00003d30       0x28 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-strncmp.o)
- .debug_frame   0x00003d58       0x3c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-wctomb_r.o)
- .debug_frame   0x00003d94       0x28 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memmove.o)
- .debug_frame   0x00003dbc       0x30 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-mlock.o)
- .debug_frame   0x00003dec       0x3c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-reallocr.o)
- .debug_frame   0x00003e28       0x5c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-reent.o)
- .debug_frame   0x00003e84       0x20 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-msizer.o)
- .debug_frame   0x00003ea4       0xac e:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_addsubdf3.o)
- .debug_frame   0x00003f50       0x50 e:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_muldivdf3.o)
- .debug_frame   0x00003fa0       0xc4 e:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_cmpdf2.o)
- .debug_frame   0x00004064       0x20 e:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_unorddf2.o)
- .debug_frame   0x00004084       0x24 e:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_fixdfsi.o)
- .debug_frame   0x000040a8       0x24 e:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_fixunsdfsi.o)
- .debug_frame   0x000040cc       0x24 e:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_truncdfsf2.o)
- .debug_frame   0x000040f0       0x20 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libnosys.a(sbrk.o)
+ .debug_frame   0x00002cb4       0x70 ./Sources/HardwareLib/LP_IT_timer.o
+ .debug_frame   0x00002d24      0x328 ./Sources/HardwareLib/SPI_OLED.o
+ .debug_frame   0x0000304c      0x218 ./Sources/HardwareLib/UART_IO.o
+ .debug_frame   0x00003264       0xcc ./Sources/HardwareLib/latency.o
+ .debug_frame   0x00003330       0x50 ./Sources/main.o
+ .debug_frame   0x00003380       0x20 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x000033a0       0x8c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-vfprintf_float.o)
+ .debug_frame   0x0000342c       0x60 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .debug_frame   0x0000348c       0x40 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-vfscanf_float.o)
+ .debug_frame   0x000034cc       0x20 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-sf_nan.o)
+ .debug_frame   0x000034ec       0x70 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-sprintf.o)
+ .debug_frame   0x0000355c      0x12c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-strtod.o)
+ .debug_frame   0x00003688       0x88 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-strtol.o)
+ .debug_frame   0x00003710       0x40 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-vsprintf.o)
+ .debug_frame   0x00003750       0x6c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-dtoa.o)
+ .debug_frame   0x000037bc       0x70 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-gdtoa-gethex.o)
+ .debug_frame   0x0000382c       0x74 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-gdtoa-hexnan.o)
+ .debug_frame   0x000038a0       0x40 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-localeconv.o)
+ .debug_frame   0x000038e0       0x68 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-locale.o)
+ .debug_frame   0x00003948       0x30 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-malloc.o)
+ .debug_frame   0x00003978       0x48 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-mbtowc_r.o)
+ .debug_frame   0x000039c0       0x28 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x000039e8      0x240 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-mprec.o)
+ .debug_frame   0x00003c28       0x2c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-callocr.o)
+ .debug_frame   0x00003c54       0x38 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-freer.o)
+ .debug_frame   0x00003c8c       0x2c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x00003cb8       0x90 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-svfprintf.o)
+ .debug_frame   0x00003d48       0x2c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-sbrkr.o)
+ .debug_frame   0x00003d74       0x28 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-strncmp.o)
+ .debug_frame   0x00003d9c       0x3c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-wctomb_r.o)
+ .debug_frame   0x00003dd8       0x28 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memmove.o)
+ .debug_frame   0x00003e00       0x30 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-mlock.o)
+ .debug_frame   0x00003e30       0x3c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-reallocr.o)
+ .debug_frame   0x00003e6c       0x5c E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-reent.o)
+ .debug_frame   0x00003ec8       0x20 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-msizer.o)
+ .debug_frame   0x00003ee8       0xac e:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x00003f94       0x50 e:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_muldivdf3.o)
+ .debug_frame   0x00003fe4       0xc4 e:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_cmpdf2.o)
+ .debug_frame   0x000040a8       0x20 e:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_unorddf2.o)
+ .debug_frame   0x000040c8       0x24 e:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_fixdfsi.o)
+ .debug_frame   0x000040ec       0x24 e:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_fixunsdfsi.o)
+ .debug_frame   0x00004110       0x24 e:/nxp/s32ds_arm_v2.2/s32ds/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .debug_frame   0x00004134       0x20 E:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v6.3/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libnosys.a(sbrk.o)
