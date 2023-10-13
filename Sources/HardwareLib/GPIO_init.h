@@ -1,9 +1,10 @@
-/*
- * GPIO_init.h
- *
- *  Created on: 2023年8月10日
- *      Author: dengtongbei
- */
+/*****************************************************************
+* @file    : GPIO_init.h 
+* @brief   : 
+* @author  : Dtb 
+* @version : 
+* @date    : 2023-8-10
+*****************************************************************/
 
 #ifndef GPIO_INIT_H_
 #define GPIO_INIT_H_

@@ -1,3 +1,10 @@
+/*****************************************************************
+* @file    : latency.c 
+* @brief   : 
+* @author  : Dtb 
+* @version : 
+* @date    : 2023-8-1
+*****************************************************************/
 #include "latency.h"
 #include "system_S32K144.h"
 #include "device_registers.h"

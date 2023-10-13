@@ -122,6 +122,70 @@ Module "dmaController1" (component edma)
    - dmaController1_EDMA_DRV_ConfigureInterrupt -Disables/Enables the channel interrupt requests.
    - dmaController1_EDMA_DRV_TriggerSwRequest -Triggers a sw request for the current channel.
 
+Module "lpspiCom1" (component lpspi)
+   - lpspiCom1_LPSPI_DRV_MasterGetDefaultConfig -Return default configuration for SPI master.
+   - lpspiCom1_LPSPI_DRV_MasterInit -Initializes a LPSPI instance for interrupt driven master mode operation.
+   - lpspiCom1_LPSPI_DRV_MasterDeinit -Shuts down a LPSPI instance.
+   - lpspiCom1_LPSPI_DRV_MasterSetDelay -Configures the LPSPI master mode bus timing delay options.
+   - lpspiCom1_LPSPI_DRV_MasterConfigureBus -Configures the LPSPI port physical parameters to access a device on the bus when 
+                the LSPI instance is configured for interrupt operation.
+   - lpspiCom1_LPSPI_DRV_SetPcs -Select the chip to communicate with.
+   - lpspiCom1_LPSPI_DRV_MasterTransferBlocking -Performs an interrupt driven blocking SPI master mode transfer.
+   - lpspiCom1_LPSPI_DRV_MasterTransfer -Performs an interrupt driven non-blocking SPI master mode transfer.
+   - lpspiCom1_LPSPI_DRV_MasterGetTransferStatus -Returns whether the previous interrupt driven transfer is completed.
+   - lpspiCom1_LPSPI_DRV_MasterAbortTransfer -Terminates an interrupt driven asynchronous transfer early.
+   - lpspiCom1_LPSPI_DRV_SlaveGetDefaultConfig -Return default configuration for SPI master.
+   - lpspiCom1_LPSPI_DRV_SlaveInit -Initializes a LPSPI instance for interrupt driven slave mode operation.
+   - lpspiCom1_LPSPI_DRV_SlaveDeinit -Shuts down an LPSPI instance interrupt mechanism.
+   - lpspiCom1_LPSPI_DRV_SlaveTransferBlocking -Transfers data on LPSPI bus using a blocking call.
+   - lpspiCom1_LPSPI_DRV_SlaveTransfer -Starts the transfer data on LPSPI bus using a non-blocking call.
+   - lpspiCom1_LPSPI_DRV_SlaveAbortTransfer -Aborts the transfer that started by a non-blocking call transfer function.
+   - lpspiCom1_LPSPI_DRV_SlaveGetTransferStatus -Returns whether the previous transfer is finished.
+
+Module "adConv1"   (component adc)
+   - adConv1_ADC_DRV_InitConverterStruct -Initializes the converter configuration structure.
+   - adConv1_ADC_DRV_ConfigConverter -Configures the converter with the given configuration structure.
+   - adConv1_ADC_DRV_GetConverterConfig -Gets the current converter configuration.
+   - adConv1_ADC_DRV_Reset -Resets the converter (sets all configurations to reset values)
+   - adConv1_ADC_DRV_InitHwCompareStruct -Initializes the Hardware Compare configuration structure.
+   - adConv1_ADC_DRV_ConfigHwCompare -Configures the Hardware Compare feature with the given configuration structure.
+   - adConv1_ADC_DRV_GetHwCompareConfig -Gets the current Hardware Compare configuration.
+   - adConv1_ADC_DRV_InitHwAverageStruct -Initializes the Hardware Average configuration structure.
+   - adConv1_ADC_DRV_ConfigHwAverage -Configures the Hardware Average feature with the given configuration structure.
+   - adConv1_ADC_DRV_GetHwAverageConfig -Gets the current Hardware Average configuration.
+   - adConv1_ADC_DRV_InitChanStruct -Initializes the control channel configuration structure
+   - adConv1_ADC_DRV_ConfigChan -Configures the selected control channel with the given configuration structure
+   - adConv1_ADC_DRV_GetChanConfig -Gets the current control channel configuration for the selected channel index
+   - adConv1_ADC_DRV_SetSwPretrigger -This function sets the software pretrigger - affects only first 4 control channels.
+   - adConv1_ADC_DRV_WaitConvDone -Waits for a conversion/calibration to finish.
+   - adConv1_ADC_DRV_GetConvCompleteFlag -Gets the control channel Conversion Complete Flag state
+   - adConv1_ADC_DRV_GetChanResult -Gets the last result for the selected control channel
+   - adConv1_ADC_DRV_AutoCalibration -Executes an Auto-Calibration.
+   - adConv1_ADC_DRV_InitUserCalibrationStruct -Initializes the User Calibration configuration structure.
+   - adConv1_ADC_DRV_ConfigUserCalibration -Configures the User Calibration feature with the given configuration structure.
+   - adConv1_ADC_DRV_GetUserCalibration -Gets the current User Calibration configuration.
+   - adConv1_ADC_DRV_GetInterruptNumber -Returns the interrupt number for the ADC instance.
+   - adConv1_ADC_DRV_ClearLatchedTriggers -Clear latched triggers under processing.
+   - adConv1_ADC_DRV_ClearTriggerErrors -Clear all latch trigger error.
+   - adConv1_ADC_DRV_GetTriggerErrorFlags -This function returns the trigger error flags bits of the ADC instance.
+
+Module "uart_pal1" (component uart_pal)
+   - uart_pal1_UART_GetDefaultConfig -Gets the default configuration structure.
+   - uart_pal1_UART_Init -Initializes the uart module.
+   - uart_pal1_UART_Deinit -De-initializes the uart module.
+   - uart_pal1_UART_SetBaudRate -Configures the UART baud rate.
+   - uart_pal1_UART_GetBaudRate -Returns the UART baud rate.
+   - uart_pal1_UART_SendDataBlocking -Perform a blocking UART transmission.
+   - uart_pal1_UART_SendData -Perform a non-blocking UART transmission.
+   - uart_pal1_UART_AbortSendingData -Terminates a non-blocking transmission early.
+   - uart_pal1_UART_GetTransmitStatus -Get the status of the current non-blocking UART transmission.
+   - uart_pal1_UART_ReceiveDataBlocking -Perform a blocking UART reception.
+   - uart_pal1_UART_ReceiveData -Perform a non-blocking UART reception.
+   - uart_pal1_UART_AbortReceivingData -Terminates a non-blocking reception early.
+   - uart_pal1_UART_GetReceiveStatus -Get the status of the current non-blocking UART reception.
+   - uart_pal1_UART_SetRxBuffer -Provide a buffer for receiving data.
+   - uart_pal1_UART_SetTxBuffer -Provide a buffer for transmitting data.
+
 Module "Cpu"       (component S32K144_100)
    - Cpu_SystemInit -This function disables the watchdog, enables FPU and the power mode protection. SystemInit is called from 
                 startup_device file.

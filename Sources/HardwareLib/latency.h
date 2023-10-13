@@ -1,9 +1,11 @@
-/*
- * latency.h
- *
- *  Created on: 2023年8月1日
- *      Author: dengtongbei
- */
+/*****************************************************************
+* @file    : latency.h 
+* @brief   : 
+* @author  : Dtb 
+* @version : 
+* @date    : 2023-8-1
+*****************************************************************/
+
 #ifndef LATENCY_H_
 #define LATENCY_H_
 #include "S32K144.h"

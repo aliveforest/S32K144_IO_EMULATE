@@ -1,9 +1,10 @@
-/*
- * LPTMR.c
- *
- *  Created on: 2023年8月8日
- *      Author: dengtongbei
- */
+/*****************************************************************
+* @file    : LPTMR.c 
+* @brief   : 
+* @author  : aliveforest@163.com
+* @version : v1.0
+* @date    : 2023-8-8
+*****************************************************************/
 
 #include "LPTMR.h"
 #include "LPUART.h"

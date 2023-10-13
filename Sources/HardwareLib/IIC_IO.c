@@ -1,9 +1,11 @@
-/*
- * IIC_IO.c
- *
- *  Created on: 2023年7月31日
- *      Author: dengtongbei
- */
+/*****************************************************************
+* @file    : IIC_IO.c 
+* @brief   : 
+* @author  : Dtb 
+* @version : 
+* @date    : 2023-7-31 
+*****************************************************************/
+
 #include "latency.h"
 #include "S32K144.h"
 #include "IIC_IO.h"

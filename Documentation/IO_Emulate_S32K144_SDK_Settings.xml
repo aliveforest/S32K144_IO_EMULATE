@@ -98,5 +98,48 @@
       <EmptySection_DummyValue />
     </Events>
   </Bean>
+  <Bean name="lpspiCom1" type="lpspi">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="lpspiCom1" />
+      <Device v="LPSPI0" />
+      <Component_version v="S32K144_SDK01" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="adConv1" type="adc">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="adConv1" />
+      <Device v="ADC0" />
+      <Component_version v="S32K144_SDK01" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="uart_pal1" type="uart_pal">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="uart_pal1" />
+      <Device v="FLEXIO" />
+      <Flexio_uart_instance v="FLEXIO_UART0" />
+      <Component_version v="S32K144_SDK01" />
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
 </PE_PROJECT_SETTINGS_DOCUMENTATION>
 

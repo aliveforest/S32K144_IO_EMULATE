@@ -1,12 +1,17 @@
-/*
- * SPI_OLED.c
- *
- *  Created on: 2023年8月7日
- *      Author: dengtongbei
- */
+/*****************************************************************
+ * @file    : Sources\HardwareLib\SPI_OLED.c 
+ * @brief   : 
+ * @author  : aliveforest@163.com
+ * @version : v1.0
+ * @date    : 2023-8-7
+*****************************************************************/
+
+
 #include "SPI_OLED.h"
 #include "OLED_FONT.h"
 #include "latency.h"
+
+
 
 uint8_t SPI_OLED_GRAM[144][8];
 
@@ -28,7 +33,11 @@ void SPI_OLED_CS_Clr(void) { PTD->PCOR |= (1UL << 3);  /*PD3*/}
 void SPI_OLED_CS_Set(void) { PTD->PSOR |= (1UL << 3); }
 
 
-//OLED的初始化
+/**
+ * @brief  : SPI_OLED的初始化
+ * @param  : void
+ * @return : void
+**/
 void SPI_OLED_Init(void){
     PCC-> PCCn[PCC_PORTD_INDEX] |= PCC_PCCn_CGC_MASK; // 开启时钟模块
     PORTD->PCR[3] = PORT_PCR_MUX(1) | PORT_PCR_DSE_MASK;   // 配置引脚为GPIO，并设置驱动能力 1->强驱动, 0->普通驱动
@@ -85,7 +94,6 @@ void SPI_OLED_Init(void){
 	SPI_OLED_Clear();
 	SPI_OLED_Set_Pos(0,0); 	
 }
-
 
 
 void SPI_OLED_Write_Byte(uint8_t data, uint8_t mode) {

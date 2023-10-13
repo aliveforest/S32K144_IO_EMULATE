@@ -1,9 +1,16 @@
-/*
- * HardwareLib.h
- *
- *  Created on: 2023年8月18日
- *      Author: dengtongbei
- */
+/*****************************************************************
+* @file    : HardwareLib.h 
+* @brief   : 
+* @author  : aliveforest@163.com 
+* @version : 
+* @date    : 2023-8-18
+*****************************************************************/
+
+
+
+
+
+
 
 #ifndef HARDWARELIB_H_
 #define HARDWARELIB_H_
