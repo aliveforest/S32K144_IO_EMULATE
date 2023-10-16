@@ -32,7 +32,6 @@ void SPI_OLED_DC_Set(void) { PTD->PSOR |= (1UL << 5); }
 void SPI_OLED_CS_Clr(void) { PTD->PCOR |= (1UL << 3);  /*PD3*/}
 void SPI_OLED_CS_Set(void) { PTD->PSOR |= (1UL << 3); }
 
-
 /**
  * @brief  : SPI_OLED的初始化
  * @param  : void
@@ -60,7 +59,7 @@ void SPI_OLED_Init(void){
     SPI_OLED_RST_Clr();
     later_ms(200);
     SPI_OLED_RST_Set(); 
-                    
+           
 	SPI_OLED_Write_Byte(0xAE,OLED_CMD);//--turn off oled panel
 	SPI_OLED_Write_Byte(0x00,OLED_CMD);//---set low column address
 	SPI_OLED_Write_Byte(0x10,OLED_CMD);//---set high column address
