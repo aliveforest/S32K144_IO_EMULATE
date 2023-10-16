@@ -1,3 +1,11 @@
+/*****************************************************************
+ * @file      : Sources\HardwareLib\UART_IO.c 
+ * @brief     : 
+ * @author    : aliveforest@163.com
+ * @version   : v1.0
+ * @date      : 2023-8-5
+ * @copyright : Copyright aliveforest@163.com 2023
+*****************************************************************/
 
 #include "device_registers.h"
 #include "latency.h"
@@ -18,7 +26,6 @@ static float error_100ns = 10.0f; // 实际测量sistick有多了1us的误差
 
 void IO_UART_init(UART_type *uartx, uint8_t _x, uint32_t tx_pin, uint32_t rx_pin, uint32_t baud)
 {
-
     interval_t_100ns = (uint32_t)(10000000.0f/baud-error_100ns);
     interval_half_100ns = (uint32_t)(interval_t_100ns/2);
     switch (_x)

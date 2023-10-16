@@ -1,9 +1,11 @@
-/*
- * SPI_OLED.h
- *
- *  Created on: 2023年8月7日
- *      Author: dengtongbei
- */
+/*****************************************************************
+ * @file      : Sources\HardwareLib\SPI_OLED.h 
+ * @brief     : 
+ * @author    : aliveforest@163.com
+ * @version   : v1.0
+ * @date      : 2023-8-7
+ * @copyright : Copyright aliveforest@163.com 2023
+*****************************************************************/
 
 #ifndef SPI_OLED_H_
 #define SPI_OLED_H_

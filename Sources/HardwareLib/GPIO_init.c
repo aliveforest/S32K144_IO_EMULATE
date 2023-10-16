@@ -1,9 +1,10 @@
 /*****************************************************************
-* @file    : GPIO_init.c 
-* @brief   : 
-* @author  : Dtb 
-* @version : 
-* @date    : 2023-8-10
+ * @file      : Sources\HardwareLib\GPIO_init.c 
+ * @brief     : 
+ * @author    : aliveforest@163.com
+ * @version   : v1.0
+ * @date      : 2023-8-10
+ * @copyright : Copyright aliveforest@163.com 2023
 *****************************************************************/
 
 #include "GPIO_init.h"

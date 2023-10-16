@@ -1,16 +1,16 @@
 /*****************************************************************
- * @file    : Sources\HardwareLib\SPI_OLED.c 
- * @brief   : 
- * @author  : aliveforest@163.com
- * @version : v1.0
- * @date    : 2023-8-7
+ * @file      : Sources\HardwareLib\SPI_OLED.c 
+ * @brief     : 
+ * @author    : aliveforest@163.com
+ * @version   : v1.0
+ * @date      : 2023-8-7
+ * @copyright : Copyright aliveforest@163.com 2023
 *****************************************************************/
 
 
 #include "SPI_OLED.h"
 #include "OLED_FONT.h"
 #include "latency.h"
-
 
 
 uint8_t SPI_OLED_GRAM[144][8];
